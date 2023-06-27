@@ -1,12 +1,10 @@
 <template>
-    <div>
-        <div class="addItem">
-            <input type="text" v-model="item.name" name="" id="" />
-            <svg @click="addItem()" :class="[item.name ? 'active' : 'inactive', 'plus']" xmlns="http://www.w3.org/2000/svg"
-                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-            </svg>
-        </div>
+    <div class="addItem">
+        <input type="text" v-model="item.name" name="" id="" />
+        <svg @click="addItem()" :class="[item.name ? 'active' : 'inactive', 'plus']" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+        </svg>
     </div>
 </template>
 
@@ -28,17 +26,15 @@ export default {
                 item: this.item
             })
                 .then(response => {
-                    if (response.status = 201) {
+                    if (response.status == 201) {
                         this.item.name = "";
+                        this.$emit('reloadlist');
                     }
                 })
                 .catch(error => {
                     console.log(error);
                 })
         }
-    },
-    mounted() {
-        console.log('Component mounted.')
     }
 }
 </script>
