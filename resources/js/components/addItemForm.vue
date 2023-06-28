@@ -1,8 +1,8 @@
 <template>
-    <div class="addItem">
-        <input type="text" v-model="item.name" name="" id="" />
-        <svg @click="addItem()" :class="[item.name ? 'active' : 'inactive', 'plus']" xmlns="http://www.w3.org/2000/svg"
-            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+    <div class="flex justify-center align-middle">
+        <input type="text" v-model="item.name" class="border-none outline-none p-1 ml-2 w-1/2" />
+        <svg @click="addItem()" :class="[item.name ? 'text-green-500' : 'text-gray-700', 'w-8']"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
         </svg>
     </div>
@@ -38,34 +38,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.addItem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-input {
-    background: #f7f7f7;
-    border: 0px;
-    outline: none;
-    padding: 5px;
-    margin-right: 10px;
-    width: 100%;
-}
-
-.active {
-    color: #00ce25
-}
-
-.inactactive {
-    color: #999999;
-}
-
-
-
-.icon {
-    width: 10%;
-}
-</style>

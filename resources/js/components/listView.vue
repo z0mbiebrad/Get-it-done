@@ -1,6 +1,6 @@
 <template>
     <div v-for="(item, index) in items" :key="index">
-        <list-item :item="item" class="item" v-on:itemchanged="$emit('reloadlist')" />
+        <list-item :item="item" class="bg-gray-200 padding-4 mt-1" v-on:itemchanged="$emit('reloadlist')" />
     </div>
 </template>
 
@@ -14,11 +14,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.item {
-    background: #e6e6e6;
-    padding: 5px;
-    margin-top: 5px;
-}
-</style>
